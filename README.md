@@ -1,3 +1,11 @@
+# Github Link
+https://github.com/sureshkpiitk/placement
+
+# streamlit link
+https://placement-u25ewttn4ykmkpeqcamcc6.streamlit.app/
+
+
+
 # Placement Prediction Project
 
 This project implements preprocessing, modeling, and evaluation for the Indian Engineering College Placement dataset.
