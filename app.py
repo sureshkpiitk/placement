@@ -10,7 +10,9 @@ from sklearn.metrics import (
     recall_score,
     f1_score,
     confusion_matrix,
-    classification_report
+    classification_report,
+    roc_auc_score,
+    matthews_corrcoef
 )
 
 # ---------------------------------------------------
@@ -90,12 +92,20 @@ def deploy():
         precision = precision_score(y_test, y_pred, average="weighted", zero_division=0)
         recall = recall_score(y_test, y_pred, average="weighted", zero_division=0)
         f1 = f1_score(y_test, y_pred, average="weighted", zero_division=0)
+        try:
+            y_pred_proba = model.predict_proba(X_test)[:, 1] 
+            roc_auc = roc_auc_score(y_test, y_pred_proba)
+        except Exception:
+            roc_auc = "N/A"
+        mcc = matthews_corrcoef(y_test, y_pred)
 
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3, col4, col5, col6 = st.columns(6)
         col1.metric("Accuracy", f"{accuracy:.4f}")
         col2.metric("Precision", f"{precision:.4f}")
         col3.metric("Recall", f"{recall:.4f}")
         col4.metric("F1 Score", f"{f1:.4f}")
+        col5.metric("ROC AUC", f"{roc_auc if isinstance(roc_auc, str) else f'{roc_auc:.4f}'}")
+        col6.metric("MCC", f"{mcc:.4f}")
 
         # ---------------------------------------------------
         # Feature 4: Confusion Matrix / Classification Report
