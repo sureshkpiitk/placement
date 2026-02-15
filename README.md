@@ -1,3 +1,9 @@
+# Student Detail
+## Name- Suresh Kumar Prajapat
+## ID- 2025005430
+## Email - 2025aa05430@wilp.bits-pilani.ac.in
+
+
 # Github Link
 https://github.com/sureshkpiitk/placement
 
@@ -125,16 +131,6 @@ Each model was evaluated using performance metrics such as Accuracy, Precision, 
 
 The best-performing model selected for deployment is **Logistic Regression**.
 
-### Deployment Steps:
-
-1. Train the best model and save it using `joblib`.
-2. Create a Streamlit application file (`app.py`) to load the model and accept user input.
-3. Create a `requirements.txt` file including all required dependencies.
-4. Upload the project to a GitHub repository.
-5. Go to **Streamlit Community Cloud** and connect the GitHub repository.
-6. Deploy the application and test predictions using sample inputs.
-
----
 
 ### Best Model Selected
 
@@ -143,3 +139,6 @@ The best-performing model selected for deployment is **Logistic Regression**.
 
 ---
 
+# Lab pic 
+
+![alt text](image.png)
