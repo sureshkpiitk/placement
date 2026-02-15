@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, matthews_corrcoef
 from sklearn.pipeline import Pipeline
 import joblib
 import json
@@ -24,6 +24,8 @@ def fit_and_evaluate(pipeline: Pipeline, X_train, X_test, y_train, y_test) -> Tu
         "precision": float(precision_score(y_test, preds, average=avg, zero_division=0)),
         "recall": float(recall_score(y_test, preds, average=avg, zero_division=0)),
         "f1": float(f1_score(y_test, preds, average=avg, zero_division=0)),
+        "auc": float(roc_auc_score(y_test, pipeline.predict_proba(X_test)[:, 1])),
+        "mcc": float(matthews_corrcoef(y_test, preds)),
     }
     return metrics, pipeline
 

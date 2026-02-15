@@ -99,12 +99,12 @@ Each model was evaluated using performance metrics such as Accuracy, Precision, 
 
 | ML Model Name                | Accuracy | AUC          | Precision | Recall | F1 Score | MCC          |
 |-----------------------------|----------|--------------|-----------|--------|----------|--------------|
-| Logistic Regression          | 1.000    | Not Computed | 1.000     | 1.000  | 1.000    | Not Computed |
-| Decision Tree                | 1.000    | Not Computed | 1.000     | 1.000  | 1.000    | Not Computed |
-| kNN                          | 0.876    | Not Computed | 0.879     | 0.993  | 0.932    | Not Computed |
-| Naive Bayes                  | 1.000    | Not Computed | 1.000     | 1.000  | 1.000    | Not Computed |
-| Random Forest (Ensemble)     | 1.000    | Not Computed | 1.000     | 1.000  | 1.000    | Not Computed |
-| XGBoost (Ensemble)           | 0.994    | Not Computed | 0.999     | 0.994  | 0.997    | Not Computed |
+| Logistic Regression          | 1.000    | 0.91         | 1.000     | 1.000  | 1.000    | 0.49         |
+| Decision Tree                | 1.000    | 0.65         | 1.000     | 1.000  | 1.000    | 0.327        |
+| kNN                          | 0.876    | 0.767        | 0.879     | 0.993  | 0.932    | 0.308        |
+| Naive Bayes                  | 1.000    | 0.88         | 1.000     | 1.000  | 1.000    | 0.51         |
+| Random Forest (Ensemble)     | 1.000    | 0.90         | 1.000     | 1.000  | 1.000    | 0.46         |
+| XGBoost (Ensemble)           | 0.994    | 0.88         | 0.999     | 0.994  | 0.997    | 0.38         |
 
 ---
 
