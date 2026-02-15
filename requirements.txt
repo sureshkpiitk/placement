@@ -11,4 +11,4 @@ kagglehub[pandas-datasets]>=0.3
 xgboost>=1.6.2
 requests>=2.28
 kaggle
-streamlit
+# streamlit
