@@ -24,8 +24,6 @@ def load_data(
 
     Args:
         path: Local desired CSV path.
-        download_url: URL to download ZIP when local missing.
-        prefer_local: If True, attempt local file first.
         merge_targets: If True and `placement_targets.csv` is inside the ZIP or data/, merge targets.
 
     Returns:

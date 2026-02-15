@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 import numpy as np
 
 from sklearn.metrics import (
@@ -44,9 +45,14 @@ models = load_models()
 st.header("📂 Upload Test Dataset (CSV)")
 uploaded_file = st.file_uploader("Upload your test dataset CSV file", type=["csv"])
 
-df = pd.read_csv("data/test_dataset.csv")  # default test dataset if no upload
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
+# df = pd.read_csv("data/test_dataset.csv")  # default test dataset if no upload
+
+def deploy():
+    if uploaded_file is not None:
+        df = pd.read_csv(uploaded_file)
+    else:
+        current_directory = os.getcwd()
+        df = pd.read_csv(current_directory + "/data/test_dataset.csv")
     st.success("✅ Dataset Uploaded Successfully!")
 
     st.subheader("📊 Preview of Uploaded Dataset")
@@ -73,8 +79,6 @@ if uploaded_file is not None:
         # ---------------------------------------------------
         # Prediction
         # ---------------------------------------------------
-        print(X_test.columns)
-        print("count", len(X_test), len(y_test))
         y_pred = model.predict(X_test)
 
         # ---------------------------------------------------
@@ -120,6 +124,4 @@ if uploaded_file is not None:
             file_name="predictions.csv",
             mime="text/csv"
         )
-
-else:
-    st.warning("⚠ Please upload a CSV file to proceed.")
+deploy()
